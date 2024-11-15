@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import { animate, useMotionTemplate,motion } from 'framer-motion';
+import { animate, useMotionTemplate,motion, useMotionValue } from 'framer-motion';
 import React, { useEffect } from 'react'
 import profilepic from '../assets/profilepic.png'
 import object from '../assets/obj1.png'
@@ -8,7 +8,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const COLORS_TOP = ["#13ffaa","#1e67c6","#ce84cf","#DD335c"]
 export const Hero = () => {
-  const color = useMotionTemplate(COLORS_TOP[0]);
+  const color = useMotionValue(COLORS_TOP[0]);
   useEffect(()=>{
     animate(color,COLORS_TOP,{
       ease:"easeInOut",
