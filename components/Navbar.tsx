@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React,{useState} from 'react'
 import { AiOutlineMenu , AiOutlineClose } from 'react-icons/ai'
+import { ShineBorder } from './ui/ShineBorderProps'
 const navlinks = [
     {title:'About',path:'#about'},
     {title:'Portfolio',path:'#portfolio'},
@@ -19,8 +20,9 @@ export const Navbar = ()=>{
     return (
         <div className='z-50 fixed flex justify-center w-full text-white font-bold'>
             {/* Desktop View Navbar */}
-            <div className='border border-white/20 mt-8 backdrop-blur-[2px] rounded-3xl
-            hidden md:flex justify-center items-center p-2 max-w-[400px] mx-auto'>
+            <ShineBorder className='border border-white/20 mt-8 backdrop-blur-[2px] rounded-3xl
+            hidden md:flex justify-center items-center p-2 max-w-[400px] mx-auto'
+            color={["#13ffaa","#1e67c6","#ce84cf","#DD335c"]}>
                 <ul className='flex flex-row p-2 space-x-8'>
                     {navlinks.map((link,index)=>(
                         <li key={index}>
@@ -30,7 +32,7 @@ export const Navbar = ()=>{
                         </li>
                     ))}
                 </ul>
-            </div>
+            </ShineBorder>
             {/* Mobile View Navbar */}
             <div onClick={toggleNav} className='md:hidden absolute transition-all duration-400 top-10 border-2 z-50 right-10 rounded  text-white/70 border-white/70 p-2'>
                 {!nav?<AiOutlineMenu size={30}/>:<AiOutlineClose size={30}/>}
