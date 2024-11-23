@@ -29,7 +29,7 @@ export const Hero = () => {
         <span className='mb-1.5 absolute md:translate-y-40  translate-y-48 translate-x-28 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
         Open to Work</span>
         <h1 className='text-white/40 text-5xl md:text-5xl font-black'>Hi, I am</h1>
-        <h1 className='max-w-3xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent text-5xl md:text-7xl'>Vatsalya Tripathi</h1>
+        <h1 className='max-w-3xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent text-5xl md:text-7xl'>Uday Sharma</h1>
         <Image 
         src={profilepic}
          alt="profile Pic"

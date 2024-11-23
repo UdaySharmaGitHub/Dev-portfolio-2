@@ -23,7 +23,7 @@ export const Meteors = ({ number = 20 }: MeteorsProps) => {
   }, [number]);
 
   return (
-    <div className="fixed z-10 -left-20">
+    <div className="fixed z-[2] -left-20 ">
       {[...meteorStyles].map((style, idx) => (
         // Meteor Head
         <span
