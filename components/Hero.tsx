@@ -6,6 +6,8 @@ import profilepic from '../assets/profilepic.png'
 import object from '../assets/obj1.png'
 import { FiArrowRight } from 'react-icons/fi';
 import { RainbowButton } from './ui/RainbowButton';
+import { BackgroundLines } from './ui/Backgroundlines';
+import { GradualSpacing } from './ui/GradualSpacing';
 
 const COLORS_TOP = ["#13ffaa","#1e67c6","#ce84cf","#DD335c"]
 export const Hero = () => {
@@ -23,17 +25,19 @@ export const Hero = () => {
   const border = useMotionTemplate`1px solid ${color}`
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`
   return (
-    <motion.section style={{backgroundImage}}
-    className='relative min-h-screen grid place-items-center overflow-hidden px-4 md:pt-16 pt-12 text-gray-50'>
-      <div className='z-10 flex flex-col  items-center mt-4'>
-        <span className='mb-1.5 absolute md:translate-y-40  translate-y-48 translate-x-28 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
+   
+     <motion.section style={{backgroundImage}}
+    className='relative min-h-screen grid place-items-center overflow-hidden px-4 text-gray-50'>
+      <BackgroundLines className='z-10 flex flex-col items-center md:mt-[15dvh] mt-[0dvh]'>
+        <span className='mb-1.5 absolute md:translate-y-40  translate-y-36 translate-x-28 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
         Open to Work</span>
-        <h1 className='text-white/40 text-5xl md:text-5xl font-black'>Hi, I am</h1>
-        <h1 className='max-w-3xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent text-5xl md:text-7xl'>Uday Sharma</h1>
+        <GradualSpacing text="Hi, I am" className='text-white/40 text-4xl md:text-5xl font-black'/>
+        <GradualSpacing text="Uday Sharma" className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'/>
         <Image 
         src={profilepic}
          alt="profile Pic"
          width={230}
+         className='z-10'
          />
          <RainbowButton className='flex justify-center items-center space-x-2 p-2 mb-4 shadow-xl backdrop-blur-lg filter bg-white/10 rounded-3xl'>
           <Image
@@ -70,7 +74,7 @@ export const Hero = () => {
        >
         Download CV<FiArrowRight/>
         </motion.button>
-      </div>
+      </BackgroundLines>
      
         <div className='bg-circle-container'>
           <div className='bg-circle-background'></div>
