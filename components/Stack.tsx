@@ -40,6 +40,7 @@ export const Stack = () => {
         whileInView={{ opacity: 1, y: 0,scale:1 }}
         transition={{
           duration: 0.8,
+          type:"spring",
           ease: "easeInOut",
         }} className='max-w-[1200px] mx-auto px-4 text-center'>
       <h1 className='text-7xl text-gray-200 font-bold mb-4'>My Stack</h1>

@@ -14,7 +14,8 @@ import {
 import { cn } from "@/lib/utils";
 
 interface VelocityScrollProps {
-  text: string;
+  text1: string;
+  text2:string;
   default_velocity?: number;
   className?: string;
 }
@@ -31,7 +32,7 @@ export const wrap = (min: number, max: number, v: number) => {
 };
 
 export function VelocityScroll({
-  text,
+  text1,text2,
   default_velocity = 5,
   className,
 }: VelocityScrollProps) {
@@ -108,10 +109,10 @@ export function VelocityScroll({
   return (
     <section className="relative w-full">
       <ParallaxText baseVelocity={default_velocity} className={className}>
-        {text}
+        {text1}
       </ParallaxText>
       <ParallaxText baseVelocity={-default_velocity} className={className}>
-        {text}
+        {text2}
       </ParallaxText>
     </section>
   );
