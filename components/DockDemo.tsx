@@ -6,7 +6,7 @@ export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function DockDemo() {
   return (
-    <div className="fixed z-50 bottom-5 left-[50%] -translate-x-[50%]">
+    <div className="mx-auto">
       <Dock magnification={60} distance={200}>
       <DockIcon className="bg-white dark:bg-white/10 p-2">
           <Icons.linkedin className="size-full" />

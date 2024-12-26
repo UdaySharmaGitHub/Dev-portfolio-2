@@ -29,17 +29,58 @@ export const Hero = () => {
      <motion.section style={{backgroundImage}}
     className='relative min-h-screen grid place-items-center overflow-hidden px-4 text-gray-50'>
       <BackgroundLines className='z-10 flex flex-col items-center md:mt-[15dvh] mt-[0dvh]'>
-        <span className='mb-1.5 absolute md:translate-y-40  translate-y-36 translate-x-28 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
+        <motion.div
+        initial={{ opacity: 0.1}}
+        whileInView={{ opacity: 1}}
+        viewport={
+          {
+            once:true,
+          }}
+        transition={{
+          duration: 0.8,
+          delay:0.2,
+          ease: "easeInOut",
+        }}
+        >
+        <span className='z-20 mb-1.5 absolute md:translate-y-40  translate-y-28 translate-x-16 md:translate-x-24 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
         Open to Work</span>
+        </motion.div>
         <GradualSpacing text="Hi, I am" className='text-white/40 text-4xl md:text-5xl font-black'/>
         <GradualSpacing text="Uday Sharma" className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'/>
+        <motion.div
+        initial={{ opacity: 0,x:-50}}
+        whileInView={{ opacity: 1,x:0}}
+        viewport={
+          {
+            once:true,
+          }}
+        transition={{
+          duration: 0.8,
+          delay:0.3,
+          ease: "anticipate",
+        }}
+        >
         <Image 
         src={profilepic}
          alt="profile Pic"
-         width={230}
+         width={250}
          className='z-10'
          />
-         <RainbowButton className='flex justify-center items-center space-x-2 p-2 mb-4 shadow-xl backdrop-blur-lg filter bg-white/10 rounded-3xl'>
+        </motion.div>
+         <motion.div
+         initial={{ opacity: 0.1, y: 20,scale:0.5 }}
+         whileInView={{ opacity: 1, y: 0,scale:1 }}
+         viewport={
+          {
+            once:true,
+          }}
+         transition={{
+           duration: 0.5,
+           delay:0.3,
+           ease: "anticipate",
+         }}
+         >
+         <RainbowButton className='z-10 flex justify-center items-center space-x-2 p-2 mb-4 shadow-xl backdrop-blur-lg filter bg-white/10 rounded-3xl'>
           <Image
           src={object} 
           alt='Object Image'
@@ -58,11 +99,35 @@ export const Hero = () => {
           width={30}
           className='rounded-2xl mx-auto'
           />
-          <p className='font-medium md:text-lg text-md'>Developing apps like a boss</p>
+          <p className='font-medium md:text-xl text-md'>Developing apps like a boss</p>
          </RainbowButton>
-         <p className=' max-w-lg text-center mb-2'>Frontend | Backend | MERN Stack Developer🖥️| Full Stack Developer🖥️| Gen AI🤖 | LLM🤖 </p>
+         </motion.div>
+         <motion.p
+         initial={{ opacity: 0,y:50}}
+         whileInView={{ opacity: 1,y:0}}
+         viewport={
+          {
+            once:true,
+          }}
+         transition={{
+           duration: 0.5,
+           delay:0.4,
+           ease: "anticipate",
+         }}
+         className='z-10 max-w-lg md:text-lg text-md font-medium text-center mb-2'>Frontend | Backend | MERN Stack Developer🖥️| Full Stack Developer🖥️| Gen AI🤖 | LLM🤖 </motion.p>
       
       <motion.button
+      initial={{ opacity: 0,y:50}}
+      whileInView={{ opacity: 1,y:0}}
+      viewport={
+        {
+          once:true,
+        }}
+      transition={{
+        duration: 0.8,
+        delay:0.5,
+        ease: "anticipate",
+      }}
        style={{border,boxShadow}}
        whileHover={{
         scale:1.015

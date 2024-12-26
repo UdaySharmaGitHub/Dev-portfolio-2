@@ -3,9 +3,10 @@ import Link from 'next/link'
 import React,{useState} from 'react'
 import { AiOutlineMenu , AiOutlineClose } from 'react-icons/ai'
 import { ShineBorder } from './ui/ShineBorderProps'
+import{motion} from 'framer-motion'
 const navlinks = [
-    {title:'About',path:'#about'},
     {title:'Portfolio',path:'#portfolio'},
+    {title:'About',path:'#about'},
     {title:'Stack',path:'#stack'},
     {title:'Contact',path:'#contact'},
 ]
@@ -18,7 +19,14 @@ export const Navbar = ()=>{
         setNav(false);
     }
     return (
-        <div className='z-50 fixed flex justify-center w-full text-white font-bold'>
+        <motion.div
+        initial={{ opacity: 0.1, y: -10,scale:0.5 }}
+        whileInView={{ opacity: 1, y: 0,scale:1 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+        className='z-50 fixed flex justify-center w-full text-white font-bold'>
             {/* Desktop View Navbar */}
             <ShineBorder className='border border-white/20 mt-8 backdrop-blur-[2px] rounded-3xl
             hidden md:flex justify-center items-center p-2 max-w-[400px] mx-auto'
@@ -50,6 +58,6 @@ export const Navbar = ()=>{
                     </ul>
             </div>
                         
-        </div>
+        </motion.div>
     )
 }

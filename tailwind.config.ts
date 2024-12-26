@@ -111,7 +111,7 @@ export default {
 				  "background-position": "0% 0%",
 				},
 			  },
-  		}
+  		},
   	}
   },
 //   plugins: [require("tailwindcss-animate")],

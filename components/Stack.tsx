@@ -10,7 +10,7 @@ import { FaJs } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { FaPython } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
-
+import {motion} from 'framer-motion'
 
 interface stackItems{
   id:number,
@@ -35,9 +35,15 @@ const stackItems =  [
 export const Stack = () => {
   return (
     <section className='py-16'>
-    <div className='max-w-[1200px] mx-auto px-4 text-center'>
-      <h1 className='text-5xl text-gray-200 font-bold mb-4'>My Stack</h1>
-      <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-6 mt-8 p-4'>
+      <motion.div
+        initial={{ opacity: 0.1, y: 100,scale:0.5 }}
+        whileInView={{ opacity: 1, y: 0,scale:1 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeInOut",
+        }} className='max-w-[1200px] mx-auto px-4 text-center'>
+      <h1 className='text-7xl text-gray-200 font-bold mb-4'>My Stack</h1>
+    <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-6 mt-8 p-4'>
         {
           stackItems.map((item)=>(
             <div key={item.id} className='flex items-center justify-center flex-col rounded-xl'>
@@ -49,7 +55,7 @@ export const Stack = () => {
           ))
         }
       </div>
-    </div>
+    </motion.div>
   </section>
   )
 }
