@@ -3,8 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ScrollBasedVelocityDemo } from "@/components/TextAnimation";
 import { MyExperience } from "@/components/MyExperience";
-import { LampDemo } from "@/components/ui/Lamp";
-// import { MyProjects } from "@/components/MyProjects";
+import { Stack } from "@/components/Stack";
 
 export default function Home() {
   return (
@@ -14,8 +13,9 @@ export default function Home() {
     <Hero/>
     {/* Text Animation */}
     <ScrollBasedVelocityDemo/>
+    {/* Tech Stack */}
+    <Stack/>
     {/* Services */}
-
     {/*Experience  */}
       <MyExperience/>
   </div>
