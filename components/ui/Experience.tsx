@@ -38,11 +38,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-10 px-4">
         <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
-          Changelog from my journey
+         Experience Journey
         </h2>
         <p className=" text-white text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+          I&apos;ve been working as Professional Software Developer for pass 6 months
         </p>
       </div>
 

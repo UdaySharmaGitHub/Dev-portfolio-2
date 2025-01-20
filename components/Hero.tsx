@@ -2,12 +2,24 @@
 import Image from 'next/image';
 import { animate, useMotionTemplate,motion, useMotionValue } from 'framer-motion';
 import React, { useEffect } from 'react'
-import profilepic from '../assets/profilepic.png'
+import profilepic from '../assets/ProfilePic.jpg'
 import object from '../assets/obj1.png'
 import { FiArrowRight } from 'react-icons/fi';
 import { RainbowButton } from './ui/RainbowButton';
 import { BackgroundLines } from './ui/Backgroundlines';
 import { GradualSpacing } from './ui/GradualSpacing';
+
+const texts = [
+  "Hello",
+  "Morphing",
+  "Text",
+  "Animation",
+  "React",
+  "Component",
+  "Smooth",
+  "Transition",
+  "Engaging",
+];
 
 const COLORS_TOP = ["#13ffaa","#1e67c6","#ce84cf","#DD335c"]
 export const Hero = () => {
@@ -28,7 +40,7 @@ export const Hero = () => {
    
      <motion.section style={{backgroundImage}}
     className='relative min-h-screen grid place-items-center overflow-hidden px-4 text-gray-50'>
-      <BackgroundLines className='z-10 flex flex-col items-center md:mt-[15dvh] mt-[0dvh]'>
+      <BackgroundLines className='z-10 flex flex-col items-center md:mt-[15dvh] mt-[0dvh] md:gap-2 gap-4'>
         <motion.div
         initial={{ opacity: 0.1}}
         whileInView={{ opacity: 1}}
@@ -42,10 +54,10 @@ export const Hero = () => {
           ease: "easeInOut",
         }}
         >
-        <span className='z-20 mb-1.5 absolute md:translate-y-40  translate-y-28 translate-x-16 md:translate-x-24 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
+        <span className='z-20 mb-1.5 absolute md:translate-y-40  translate-y-36 translate-x-20 md:translate-x-24 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
         Open to Work</span>
         </motion.div>
-        <GradualSpacing text="Hi, I am" className='text-white/40 text-4xl md:text-5xl font-black'/>
+        <GradualSpacing text="Hi, I am" className='text-white/40 text-5xl font-black'/>
         <GradualSpacing text="Uday Sharma" className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'/>
         <motion.div
         initial={{ opacity: 0,x:-50}}
@@ -63,7 +75,7 @@ export const Hero = () => {
         <Image 
         src={profilepic}
          alt="profile Pic"
-         width={250}
+         width={230}
          className='z-10'
          />
         </motion.div>
@@ -114,7 +126,7 @@ export const Hero = () => {
            delay:0.4,
            ease: "anticipate",
          }}
-         className='z-10 max-w-lg md:text-lg text-md font-medium text-center mb-2'>Frontend | Backend | MERN Stack Developer🖥️| Full Stack Developer🖥️| Gen AI🤖 | LLM🤖 </motion.p>
+         className='z-10 max-w-lg text-xl font-semibold text-center mb-2'>Frontend | Backend | MERN Stack Developer🖥️| Full Stack Developer🖥️| Gen AI🤖 | LLM🤖 </motion.p>
       
       <motion.button
       initial={{ opacity: 0,y:50}}
@@ -135,7 +147,7 @@ export const Hero = () => {
        whileTap={{
         scale:0.985
        }}
-       className='flex justify-center items-center px-4 py-2 w-fit mx-auto rounded-2xl'
+       className='flex justify-center items-center px-4 py-2 w-fit mx-auto rounded-2xl font-semibold text-xl'
        >
         Download CV<FiArrowRight/>
         </motion.button>
