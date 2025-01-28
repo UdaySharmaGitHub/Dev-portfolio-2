@@ -32,7 +32,7 @@ export default function Home() {
   const comp = useRef(null)
 
   useLayoutEffect(()=>{
-    let ctx = gsap.context(()=>{
+    const ctx = gsap.context(()=>{
       const t1 = gsap.timeline();
       t1.from('#intro-slider',{
         xPercent:"-100",
