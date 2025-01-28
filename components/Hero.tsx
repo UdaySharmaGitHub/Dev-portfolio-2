@@ -7,7 +7,8 @@ import object from '../assets/obj1.png'
 import { FiArrowRight } from 'react-icons/fi';
 import { RainbowButton } from './ui/RainbowButton';
 import { BackgroundLines } from './ui/Backgroundlines';
-
+import { FollowerPointerCard,TitleComponent } from './ui/FollowingPointer';
+import { Resumedata } from '@/data/Resume';
 const COLORS_TOP = ["#13ffaa","#1e67c6","#ce84cf","#DD335c"]
 export const Hero = () => {
   const color = useMotionValue(COLORS_TOP[0]);
@@ -25,7 +26,14 @@ export const Hero = () => {
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`
   return (
    
-     <motion.section style={{backgroundImage}}
+    <FollowerPointerCard
+    title={
+      <TitleComponent
+        title="Home"
+      />
+    }
+  >
+    <motion.section style={{backgroundImage}}
      initial={{opacity:0}}
      whileInView={{opacity:1}}
      transition={{duration:0.3}}
@@ -72,7 +80,7 @@ export const Hero = () => {
           delay:0.1,
           ease: "anticipate",
         }}
-        className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'>Uday Sharma</motion.div>
+        className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'>{Resumedata.name}</motion.div>
         <motion.div
         initial={{ opacity: 0,x:-50}}
         whileInView={{ opacity: 1,x:0}}
@@ -125,7 +133,7 @@ export const Hero = () => {
           width={30}
           className='rounded-2xl mx-auto'
           />
-          <p className='font-medium md:text-xl text-md'>Developing apps like a boss</p>
+          <p className='font-medium md:text-xl text-md'>{Resumedata.punchLine}</p>
          </RainbowButton>
          </motion.div>
          <motion.p
@@ -140,7 +148,7 @@ export const Hero = () => {
            delay:0.4,
            ease: "anticipate",
          }}
-         className='z-10 max-w-lg text-xl font-semibold text-center mb-2'>Frontend | Backend | MERN Stack Developer🖥️| Full Stack Developer🖥️| Gen AI🤖 | LLM🤖 </motion.p>
+         className='z-10 max-w-lg text-xl md:text-2xl font-semibold text-center mb-2'>{Resumedata.WorkField}</motion.p>
       
       <motion.button
       initial={{ opacity: 0,y:50}}
@@ -172,5 +180,7 @@ export const Hero = () => {
           <div className='bg-circle'></div>
         </div>
     </motion.section>
+  </FollowerPointerCard>
   )
 }
+

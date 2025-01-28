@@ -36,7 +36,7 @@ export default function Home() {
       const t1 = gsap.timeline();
       t1.from('#intro-slider',{
         xPercent:"-100",
-        delay:6,
+        delay:4,
         duration:1,
       }).from(['#title-1','#title-2','#title-3'],{
         opacity:0,
@@ -46,14 +46,12 @@ export default function Home() {
         opacity:0,
         y:'-30',
         stagger:0.5,
-        delay:0.3
-      }).to('#intro-slider',{
-        xPercent:"-100",
-        delay:0.7,
-        duration:1,
       }).to('#morphingAnimation',{
         yPercent:"-100",
-        duration:0.3,
+      }).to('#intro-slider',{
+        xPercent:"-100",
+        delay:0.1,
+        duration:0.5,
       })
     },comp)
     return ()=>ctx.revert();

@@ -1,7 +1,8 @@
 import { VelocityScroll } from "./ui/VelocityScroll";
 import {Iceberg} from 'next/font/google'
 import {motion} from 'framer-motion'
-
+import { Resumedata } from "@/data/Resume";
+import { FollowerPointerCard,TitleComponent } from './ui/FollowingPointer';
 const iceBerg = Iceberg({
   subsets:['latin'],
   weight:['400']
@@ -9,6 +10,13 @@ const iceBerg = Iceberg({
 
 export function ScrollBasedVelocityDemo() {
   return (
+    <FollowerPointerCard
+        title={
+          <TitleComponent
+            title="Work ?"
+          />
+        }
+      >
     <div className={iceBerg.className}>
     <motion.div
     initial={{opacity:0}}
@@ -20,8 +28,8 @@ export function ScrollBasedVelocityDemo() {
     }}
     >
     <VelocityScroll
-      text1="Design & Develope &"
-      text2="Think + Code + Create +"
+      text1={Resumedata.TextAnimationLine1}
+      text2={Resumedata.TextAnimationLine2}
       default_velocity={5}
       className="text-center pt-4 font-bold tracking-[-0.02em] drop-shadow-sm text-white text-[10dvw] font-iceBerg leading-[10dvw]"
     />
@@ -36,12 +44,13 @@ export function ScrollBasedVelocityDemo() {
     }}
     >
     <VelocityScroll
-      text1="FrontEnd & BackEnd &"
-      text2="Full Stack & MERN Stack &"
+      text1={Resumedata.TextAnimationLine3}
+      text2={Resumedata.TextAnimationLine4}
       default_velocity={5}
       className="text-center pt-4 font-bold tracking-[-0.02em] drop-shadow-sm text-white text-[10dvw] font-iceBerg leading-[10dvw]"
     />
     </motion.div>
     </div>
+    </FollowerPointerCard>
   );
 }
