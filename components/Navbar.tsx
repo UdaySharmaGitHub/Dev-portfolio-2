@@ -57,14 +57,22 @@ export const Navbar = ()=>{
             </motion.div> 
 
          {/* Mobile View Navigation */}
-         <div className={`${nav?"translate-x-0":"-translate-x-full"} z-40 fixed backdrop-blur-[8px] top-0 left-0 h-full w-full bg-black/50 transform transition-transform duration-300`}>
+         <div className={`${nav?"translate-x-0":"-translate-x-full"} z-40 fixed text-white backdrop-blur-[8px] top-0 left-0 h-full w-full bg-black/50 transform transition-transform duration-300`}>
          <ul className=' flex flex-col items-center justify-center space-y-8 h-full'>
          {navlinks.map((link,index)=>(
-             <li key={index}>
+             <motion.li
+             initial={{y:50,opacity:0,scale:0.9}}
+             whileInView={{y:0,opacity:1,scale:1}}
+             transition={{duration:0.5,
+                delay:0.1*index,
+                type:"spring",
+                ease:"easeInOut"
+             }}
+             key={index}>
              <Link href={link.path} onClick={closeNav} className='duration-300 ease-in-out hover:text-white/20 text-5xl transform transition-transform'>
              {link.title}
              </Link>
-         </li>
+         </motion.li>
          ))}    
          </ul>
  </div>

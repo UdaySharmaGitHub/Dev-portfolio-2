@@ -25,6 +25,7 @@ export function ScrollBasedVelocityDemo() {
       default_velocity={5}
       className="text-center pt-4 font-bold tracking-[-0.02em] drop-shadow-sm text-white text-[10dvw] font-iceBerg leading-[10dvw]"
     />
+    </motion.div>
     <motion.div
     initial={{opacity:0}}
     whileInView={{opacity:1}}
@@ -40,7 +41,6 @@ export function ScrollBasedVelocityDemo() {
       default_velocity={5}
       className="text-center pt-4 font-bold tracking-[-0.02em] drop-shadow-sm text-white text-[10dvw] font-iceBerg leading-[10dvw]"
     />
-    </motion.div>
     </motion.div>
     </div>
   );

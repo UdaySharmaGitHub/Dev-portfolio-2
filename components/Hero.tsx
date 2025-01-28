@@ -7,19 +7,6 @@ import object from '../assets/obj1.png'
 import { FiArrowRight } from 'react-icons/fi';
 import { RainbowButton } from './ui/RainbowButton';
 import { BackgroundLines } from './ui/Backgroundlines';
-import { GradualSpacing } from './ui/GradualSpacing';
-
-const texts = [
-  "Hello",
-  "Morphing",
-  "Text",
-  "Animation",
-  "React",
-  "Component",
-  "Smooth",
-  "Transition",
-  "Engaging",
-];
 
 const COLORS_TOP = ["#13ffaa","#1e67c6","#ce84cf","#DD335c"]
 export const Hero = () => {
@@ -39,6 +26,10 @@ export const Hero = () => {
   return (
    
      <motion.section style={{backgroundImage}}
+     initial={{opacity:0}}
+     whileInView={{opacity:1}}
+     transition={{duration:0.3}}
+     viewport={{once:true}}
     className='relative min-h-screen grid place-items-center overflow-hidden px-4 text-gray-50'>
       <BackgroundLines className='z-10 flex flex-col items-center md:mt-[15dvh] mt-[0dvh] md:gap-2 gap-4'>
         <motion.div
@@ -57,8 +48,31 @@ export const Hero = () => {
         <span className='z-20 mb-1.5 absolute md:translate-y-40  translate-y-36 translate-x-20 md:translate-x-24 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
         Open to Work</span>
         </motion.div>
-        <GradualSpacing text="Hi, I am" className='text-white/40 text-5xl font-black'/>
-        <GradualSpacing text="Uday Sharma" className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'/>
+        <motion.div
+        initial={{ opacity: 0,x:-50}}
+        whileInView={{ opacity: 1,x:0}}
+        viewport={
+          {
+            once:true,
+          }}
+        transition={{
+          duration: 0.6,
+          ease: "anticipate",
+        }}
+        className='text-white/40 text-5xl font-black'>Hi, I am</motion.div>
+        <motion.div
+        initial={{ opacity: 0,x:50}}
+        whileInView={{ opacity: 1,x:0}}
+        viewport={
+          {
+            once:true,
+          }}
+        transition={{
+          duration: 0.6,
+          delay:0.1,
+          ease: "anticipate",
+        }}
+        className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'>Uday Sharma</motion.div>
         <motion.div
         initial={{ opacity: 0,x:-50}}
         whileInView={{ opacity: 1,x:0}}
