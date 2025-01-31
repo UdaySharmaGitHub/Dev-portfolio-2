@@ -14,6 +14,7 @@ import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import {gsap} from 'gsap'
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { MorphingText } from "@/components/ui/MorphingText";
+import { Aboutme } from "@/components/Aboutme";
 const ptSerifg = PT_Serif({
   subsets: ['latin'],
   weight:['400']
@@ -97,6 +98,8 @@ export default function Home() {
     <Hero/>
     {/* Text Animation */}
     <ScrollBasedVelocityDemo/>
+    {/* About us Page */}
+    <Aboutme/>
     {/* Tech Stack */}
     <Stack/>
     {/* Services */}

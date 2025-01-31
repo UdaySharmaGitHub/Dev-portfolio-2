@@ -22,7 +22,7 @@ export const Hero = () => {
   },[])
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%,#000 50%,${color})`
-  const border = useMotionTemplate`1px solid ${color}`
+  const border = useMotionTemplate`2px solid ${color}`
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`
   return (
    
@@ -53,7 +53,7 @@ export const Hero = () => {
           ease: "easeInOut",
         }}
         >
-        <span className='z-20 mb-1.5 absolute md:translate-y-40  translate-y-36 translate-x-20 md:translate-x-24 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
+        <span className='z-20 absolute md:translate-y-40  translate-y-36 translate-x-20 md:translate-x-24 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm'>
         Open to Work</span>
         </motion.div>
         <motion.div
@@ -67,7 +67,7 @@ export const Hero = () => {
           duration: 0.6,
           ease: "anticipate",
         }}
-        className='text-white/40 text-5xl font-black'>Hi, I am</motion.div>
+        className='text-white/40 md:text-5xl text-4xl font-black'>Hi, I am</motion.div>
         <motion.div
         initial={{ opacity: 0,x:50}}
         whileInView={{ opacity: 1,x:0}}
@@ -80,7 +80,7 @@ export const Hero = () => {
           delay:0.1,
           ease: "anticipate",
         }}
-        className='max-w-3xl text-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent sm:text-5xl md:text-7xl'>{Resumedata.name}</motion.div>
+        className='max-w-4xl text-center bg-gradient-to-br from-white to-gray-400 bg-clip-text font-bold leading-tight text-transparent text-5xl md:text-7xl'>{Resumedata.name}</motion.div>
         <motion.div
         initial={{ opacity: 0,x:-50}}
         whileInView={{ opacity: 1,x:0}}
@@ -114,12 +114,18 @@ export const Hero = () => {
            ease: "anticipate",
          }}
          >
-         <RainbowButton className='z-10 flex justify-center items-center space-x-2 p-2 mb-4 shadow-xl backdrop-blur-lg filter bg-white/10 rounded-3xl'>
+         <RainbowButton className='z-10 flex justify-center items-center space-x-2 p-2 mb-1 shadow-xl backdrop-blur-lg filter bg-white/10 rounded-3xl'>
           <Image
           src={object} 
           alt='Object Image'
           width={30}
-          className='rounded-2xl mx-auto'
+          className='rounded-2xl mx-auto hidden md:block'
+          />
+          <Image
+          src={object} 
+          alt='Object Image'
+          width={30}
+          className='rounded-2xl mx-auto hidden md:block'
           />
           <Image
           src={object} 
@@ -127,13 +133,7 @@ export const Hero = () => {
           width={30}
           className='rounded-2xl mx-auto'
           />
-          <Image
-          src={object} 
-          alt='Object Image'
-          width={30}
-          className='rounded-2xl mx-auto'
-          />
-          <p className='font-medium md:text-xl text-md'>{Resumedata.punchLine}</p>
+          <p className='font-semibold md:text-xl text-lg'>{Resumedata.punchLine}</p>
          </RainbowButton>
          </motion.div>
          <motion.p
@@ -148,7 +148,7 @@ export const Hero = () => {
            delay:0.4,
            ease: "anticipate",
          }}
-         className='z-10 max-w-lg text-xl md:text-2xl font-semibold text-center mb-2'>{Resumedata.WorkField}</motion.p>
+         className='z-10 max-w-lg text-xl md:text-2xl font-semibold text-center'>{Resumedata.WorkField}</motion.p>
       
       <motion.button
       initial={{ opacity: 0,y:50}}
